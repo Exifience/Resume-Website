@@ -1,0 +1,43 @@
+import React, { Component } from 'react';
+
+class Contact extends Component {
+  render() {
+
+    if(this.props.data){
+      var name = this.props.data.name;
+      var street = this.props.data.address.street;
+      var city = this.props.data.address.city;
+      var state = this.props.data.address.state;
+      var zip = this.props.data.address.zip;
+      var phone= this.props.data.phone;
+      var email = this.props.data.email;
+    }
+
+    return (
+      <section id="contact">
+
+         <div className="columns">
+           <div className="contact">
+            <h3> Feel free to contact me through email!</h3>
+           </div>
+          <div className="add">
+					   <h4>Address and Phone</h4>
+					   <p>
+						   {name}<br />
+						   {street} <br />
+						   {city}, {state} {zip}<br />
+						   <span>{phone}</span>
+					   </p>
+				   </div>
+           <div className = "email">
+           <h4>Email</h4>
+           {email}
+           </div>
+
+        </div>
+   </section>
+    );
+  }
+}
+
+export default Contact;
